@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
+
+
+Route::get('/email/verify', [AuthController::class, 'showVerificationNotice'])->middleware('auth')->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmail'])->middleware(['auth', 'signed'])->name('verification.verify');
+Route::post('/email/resend', [AuthController::class, 'resendVerificationEmail'])->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/', [AttendanceController::class, 'index'])->name('index');
+
+    Route::post('/attendance/start', [AttendanceController::class, 'startAttendance'])->name('attendance.startWork');
+    Route::post('/attendance/end', [AttendanceController::class, 'endAttendance'])->name('attendance.endWork');
+
+    Route::post('/rest/start', [AttendanceController::class, 'startRest'])->name('attendance.startRest');
+    Route::post('/rest/end', [AttendanceController::class, 'endRest'])->name('attendance.endRest');
+
+    Route::get('/attendance', [AttendanceController::class, 'attendance'])->name('attendance');
+
+    Route::get('/staff', [AttendanceController::class, 'staff']);
+
+    Route::get('/individual', [AttendanceController::class, 'individual'])->name('attendance.individual');
 });
