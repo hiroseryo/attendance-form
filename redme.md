@@ -1,18 +1,18 @@
 # Atte(勤怠管理システム)
 
-![image](file:///Users/pagu/Documents/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202024-11-13%2013.14.35.png)
+![image](./images/HOME.png)
 
 ## 作成した目的
 
-勉強のため作成しました
+勉強のためといろいろな機能を実装し経験するために作成しました。
 
 ## テーブル設計
 
-![image](file:///Users/pagu/Documents/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202024-11-13%2013.27.27.png)
+![image](./images/table.png)
 
 ## 機能一覧
 
-![image](file:///Users/pagu/Documents/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202024-11-13%2013.49.45.png)
+![image](./images/function.png)
 
 ## 環境構築
 
@@ -93,7 +93,7 @@ MAIL_FROM_NAME="${APP_NAME}"
 
 ## ER 図
 
-![image](file:///Users/pagu/Documents/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202024-11-13%2012.40.57.png)
+![image](./images/ER.png)
 
 ## URL
 
